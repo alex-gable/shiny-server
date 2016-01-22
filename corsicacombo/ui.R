@@ -20,7 +20,7 @@ shinyUI(navbarPage("Combos", id = "tab", inverse = F,
                             # Header text
                             fluidRow(
                               column(6, h2("Line Stats")),
-                              column(6, h2("Corsica", class = "rightAlign"))
+                              column(6, h2("Test", class = "rightAlign"))
                             ),
                             
                             # Help text
