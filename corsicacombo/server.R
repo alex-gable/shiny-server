@@ -35,13 +35,7 @@ shinyServer(function(input, output) {
     
     data <- reactive({
       
-      if (input$tab == "line") {
-        data <- predata
-      } else if (input$tab == "pair") {
-        data <- pairdata()
-      }
-      
-      data
+      predata
       
     })
   
