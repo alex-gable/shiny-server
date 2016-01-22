@@ -18,27 +18,18 @@ response <- GET(url = "https://www.dropbox.com/s/ow3xicdgt2epor6/linetest.Rda?dl
 writeBin(response$content, "lines.Rda")
 load("lines.Rda")
 
-predata <- sumline
+response2 <- GET(url = "https://www.dropbox.com/s/mnlsx0txbost4gi/pairtest.Rda?dl=1")
+writeBin(response2$content, "pairs.Rda")
+load("pairs.Rda")
 
 shinyServer(function(input, output, session) {
   
-  # Load required data
-  pairdata <- reactive({
-    
-      response <- GET(url = "https://www.dropbox.com/s/mnlsx0txbost4gi/pairtest.Rda?dl=1")
-      writeBin(response$content, "pairs.Rda")
-      load("pairs.Rda")
-      
-      sumpair
-      
-  })
-    
     data <- reactive({
       
       if (input$tab == "line") {
-        data <- predata
+        data <- sumline
       } else if (input$tab == "pair") {
-        data <- pairdata()
+        data <- sumpair
       }
       
       data
