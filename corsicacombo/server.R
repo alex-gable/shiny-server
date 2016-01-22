@@ -1,7 +1,7 @@
 # Server
 
 # Corsica Combo App
-# Last edited 1-17-2016
+# Last edited 1-22-2016
 # Manny
 
 # Load libraries
@@ -10,21 +10,19 @@ library(dplyr)
 library(repmis)
 library(Kmisc)
 library(DT)
-library(httr)
+
+# Load data
+require(httr)
+
+response <- GET(url = "https://www.dropbox.com/s/ow3xicdgt2epor6/linetest.Rda?dl=1")
+writeBin(response$content, "lines.Rda")
+load("lines.Rda")
+
+predata <- sumline
 
 shinyServer(function(input, output) {
   
   # Load required data
-  linedata <- reactive({
-    
-      response <- GET(url = "https://www.dropbox.com/s/ow3xicdgt2epor6/linetest.Rda?dl=1")
-      writeBin(response$content, "lines.Rda")
-      load("lines.Rda")
-      
-      sumline
-      
-  })
-  
   pairdata <- reactive({
     
       response <- GET(url = "https://www.dropbox.com/s/mnlsx0txbost4gi/pairtest.Rda?dl=1")
@@ -38,7 +36,7 @@ shinyServer(function(input, output) {
     data <- reactive({
       
       if (input$tab == "line") {
-        data <- linedata()
+        data <- predata
       } else if (input$tab == "pair") {
         data <- pairdata()
       }
