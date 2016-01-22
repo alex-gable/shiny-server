@@ -4,7 +4,7 @@
 # Last edited 1-18-2016
 # Manny
 
-shinyUI(navbarPage("Combos", id = "tab", inverse = F,
+shinyUI(navbarPage("Combos", id = "tab", inverse = F, windowTitle = "159.203.24.113:3838/corsicacombo/",
                    
                    tabPanel("Lines", value = "line",
                             
@@ -53,7 +53,7 @@ shinyUI(navbarPage("Combos", id = "tab", inverse = F,
                             
                             ),
                    
-                   tabPanel("Pairs", value = "pair",
+                   tabPanel("Pairings", value = "pair",
                             
                             # Header text
                             fluidRow(

@@ -20,7 +20,7 @@ load("lines.Rda")
 
 predata <- sumline
 
-shinyServer(function(input, output) {
+shinyServer(function(input, output, session) {
   
   # Load required data
   pairdata <- reactive({
@@ -46,10 +46,10 @@ shinyServer(function(input, output) {
     })
   
   # Season inputs
-  output$l1 <- renderUI(selectInput("l1", "From", choices = sort(unique(predata$Season), decreasing = TRUE), selected = as.character(max(as.numeric(predata$Season)))))
-  output$l2 <- renderUI(selectInput("l2", "To", choices = sort(unique(predata$Season), decreasing = TRUE), selected = as.character(max(as.numeric(predata$Season)))))
-  output$p1 <- renderUI(selectInput("p1", "From", choices = sort(unique(predata$Season), decreasing = TRUE), selected = as.character(max(as.numeric(predata$Season)))))
-  output$p2 <- renderUI(selectInput("p2", "To", choices = sort(unique(predata$Season), decreasing = TRUE), selected = as.character(max(as.numeric(predata$Season)))))
+  output$l1 <- renderUI(selectInput("l1", "From", choices = sort(unique(data()$Season), decreasing = TRUE), selected = as.character(max(as.numeric(data()$Season)))))
+  output$l2 <- renderUI(selectInput("l2", "To", choices = sort(unique(data()$Season), decreasing = TRUE), selected = as.character(max(as.numeric(data()$Season)))))
+  output$p1 <- renderUI(selectInput("p1", "From", choices = sort(unique(data()$Season), decreasing = TRUE), selected = as.character(max(as.numeric(data()$Season)))))
+  output$p2 <- renderUI(selectInput("p2", "To", choices = sort(unique(data()$Season), decreasing = TRUE), selected = as.character(max(as.numeric(data()$Season)))))
   
   # Team inputs
   output$l3 <- renderUI(selectInput("l3", "Team", choices = c("Any", sort(unique(substr(as.character(data()$Team), start = 1, stop = 3))), selected = "Any")))
