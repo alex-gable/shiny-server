@@ -49,7 +49,7 @@ shinyUI(navbarPage("Combos", id = "tab", inverse = F, windowTitle = "Combos",
                             ),
                             
                             # Output
-                            dataTableOutput("t1")
+                            DT::dataTableOutput("t1")
                             
                             ),
                    
