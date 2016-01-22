@@ -15,25 +15,37 @@ library(httr)
 shinyServer(function(input, output) {
   
   # Load required data
-  data <- reactive({
+  linedata <- reactive({
     
-    if (input$tab == "line") {
       response <- GET(url = "https://www.dropbox.com/s/ow3xicdgt2epor6/linetest.Rda?dl=1")
       writeBin(response$content, "lines.Rda")
       load("lines.Rda")
       
-      data <- sumline
-    } else if (input$tab == "pair") {
+      sumline
+      
+  })
+  
+  pairdata <- reactive({
+    
       response <- GET(url = "https://www.dropbox.com/s/mnlsx0txbost4gi/pairtest.Rda?dl=1")
       writeBin(response$content, "pairs.Rda")
       load("pairs.Rda")
       
-      data <- sumpair
-    }
-    
-    data
-    
+      sumpair
+      
   })
+    
+    data <- reactive({
+      
+      if (input$tab == "line") {
+        data <- linedata()
+      } else if (input$tab == "pair") {
+        data <- pairdata()
+      }
+      
+      data
+      
+    })
   
   # Season inputs
   output$l1 <- renderUI(selectInput("l1", "From", choices = sort(unique(data()$Season), decreasing = TRUE), selected = as.character(max(as.numeric(data()$Season)))))
