@@ -10,7 +10,7 @@ library(dplyr)
 library(repmis)
 library(Kmisc)
 library(DT)
-
+library(httr)
 
 shinyServer(function(input, output) {
   
@@ -18,16 +18,12 @@ shinyServer(function(input, output) {
   data <- reactive({
     
     if (input$tab == "line") {
-      require(httr)
-      
       response <- GET(url = "https://www.dropbox.com/s/ow3xicdgt2epor6/linetest.Rda?dl=1")
       writeBin(response$content, "lines.Rda")
       load("lines.Rda")
       
       data <- sumline
     } else if (input$tab == "pair") {
-      require(httr)
-      
       response <- GET(url = "https://www.dropbox.com/s/mnlsx0txbost4gi/pairtest.Rda?dl=1")
       writeBin(response$content, "pairs.Rda")
       load("pairs.Rda")
