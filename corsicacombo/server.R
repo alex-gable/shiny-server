@@ -12,7 +12,7 @@ library(Kmisc)
 library(DT)
 
 # Load data
-load("linetest.Rda") # Remote
+load("lineload.Rda") # Remote
 # load("~/Documents/github/apps/corsicacombo/linetest.Rda") # Local
 
 predata <- sumline
@@ -22,7 +22,7 @@ shinyServer(function(input, output, session) {
   # Load required data
   pairdata <- reactive({
     
-      load("pairtest.Rda") # Remote
+      load("pairload.Rda") # Remote
       # load("~/Documents/github/apps/corsicacombo/pairtest.Rda") # Local
       
       sumpair

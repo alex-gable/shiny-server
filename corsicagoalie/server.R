@@ -12,7 +12,7 @@ library(Kmisc)
 library(DT)
 
 # Load data
-load("goalietest.Rda") # Remote
+load("goalieload.Rda") # Remote
 # load("~/Documents/github/apps/corsicagoalie/goalietest.Rda") # Local
 
 data <- sumgoalie

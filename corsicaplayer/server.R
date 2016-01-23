@@ -12,7 +12,7 @@ library(Kmisc)
 library(DT)
 
 # Load data
-load("playertest.Rda") # Remote
+load("playerload.Rda") # Remote
 # load("~/Documents/github/apps/corsicaplayer/playertest.Rda") # Local
 
 data <- sumplayer
