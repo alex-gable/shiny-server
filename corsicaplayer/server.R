@@ -13,10 +13,10 @@ library(DT)
 
 # Load data
 #require(httr)
-setwd("~/srv/shiny-server/corsicaplayer/")
+#setwd("~/srv/shiny-server/corsicaplayer/")
 #response <- GET(url = "https://dl.dropbox.com/s/qx4ywngp7jh17ei/playertest.Rda?dl=1")
 #writeBin(response$content, "test2.Rda")
-load("playertest.Rda")
+load("~/srv/shiny-server/corsicaplayer/playertest.Rda")
 
 data <- sumplayer
 
