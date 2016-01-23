@@ -1,10 +1,10 @@
 # User Interface
 
 # Corsica Combo App
-# Last edited 1-18-2016
+# Last edited 1-22-2016
 # Manny
 
-shinyUI(navbarPage("Combos", id = "tab", inverse = F, windowTitle = "Combos",
+shinyUI(navbarPage("Combos", id = "tab", inverse = F, windowTitle = "Corsica | Combos",
                    
                    tabPanel("Lines", value = "line",
                             
