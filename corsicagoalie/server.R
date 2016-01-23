@@ -1,7 +1,7 @@
 # Server
 
 # Corsica Goalie App
-# Last edited 1-17-2016
+# Last edited 1-23-2016
 # Manny
 
 # Load libraries
@@ -12,11 +12,8 @@ library(Kmisc)
 library(DT)
 
 # Load data
-require(httr)
-
-response <- GET(url = "https://dl.dropbox.com/s/vtz3trvudpuvwza/goalietest.Rda?dl=1")
-writeBin(response$content, "test2.Rda")
-load("test2.Rda")
+load("goalietest.Rda") # Remote
+# load("~/Documents/github/apps/corsicagoalie/goalietest.Rda") # Local
 
 data <- sumgoalie
 
