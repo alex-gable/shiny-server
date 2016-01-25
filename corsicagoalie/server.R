@@ -13,7 +13,7 @@ library(DT)
 
 # Load data
 load("goalieload.Rda") # Remote
-# load("~/Documents/github/apps/corsicagoalie/goalietest.Rda") # Local
+# load("~/Documents/github/shiny-server/corsicagoalie/goalieload.Rda") # Local
 
 data <- sumgoalie
 

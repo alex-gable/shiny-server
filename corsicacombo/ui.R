@@ -26,7 +26,7 @@ shinyUI(navbarPage("Combos", id = "tab", inverse = F, windowTitle = "Corsica | C
                             # Help text
                             fluidRow(
                               column(6, helpText("Loading the data may take a few seconds. Thanks for your patience.")),
-                              column(6, helpText("Hockey stats for the informed fan", class = "rightAlign"))
+                              column(6, helpText("", class = "rightAlign"))
                             ),
                             
                             # Input row 1

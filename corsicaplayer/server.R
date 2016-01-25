@@ -13,7 +13,7 @@ library(DT)
 
 # Load data
 load("playerload.Rda") # Remote
-# load("~/Documents/github/apps/corsicaplayer/playertest.Rda") # Local
+#load("~/Documents/github/shiny-server/corsicaplayer/playerload.Rda") # Local
 
 data <- sumplayer
 
@@ -97,7 +97,7 @@ shinyServer(function(input, output) {
       
       sub <- filter(data, Season %in% seasonvector & {{Venue == "Home" & Strength.State %in% strengthvector} | {Venue == "Away" & Strength.State %in% str_rev(strengthvector)}} & 
       {{Venue == "Home" & Score.Cat %in% scorevector} | {Venue == "Away" & Score.Cat %in% -scorevector}} & Season.Type %in% typevector & Venue %in% venuevector & 
-        Position %in% posvector & grepl(teamvector, Team) == TRUE & tolower(Player) %in% playervector) %>% 
+        grepl(paste(posvector, collapse = "|"), Position) == TRUE & grepl(teamvector, Team) == TRUE & tolower(Player) %in% playervector) %>% 
         group_by(Player) %>% 
         summarise(Season = paste(substr(as.character(min(as.numeric(Season))), start = 1, stop = 4), substr(as.character(max(as.numeric(Season))), start = 5, stop = 8), sep = "-"),
                   Season.Type = paste(unique(Season.Type), collapse = "/"),
@@ -182,7 +182,7 @@ shinyServer(function(input, output) {
     } else {
       sub <- filter(data, Season %in% seasonvector & {{Venue == "Home" & Strength.State %in% strengthvector} | {Venue == "Away" & Strength.State %in% str_rev(strengthvector)}} & 
       {{Venue == "Home" & Score.Cat %in% scorevector} | {Venue == "Away" & Score.Cat %in% -scorevector}} & Season.Type %in% typevector & Venue %in% venuevector &
-        Position %in% posvector & grepl(teamvector, Team) == TRUE & tolower(Player) %in% playervector) %>% 
+        grepl(paste(posvector, collapse = "|"), Position) == TRUE & grepl(teamvector, Team) == TRUE & tolower(Player) %in% playervector) %>% 
         group_by(Player, Season, Season.Type) %>% 
         summarise(Position = first(Position), Team = first(Team),
                   GP = max(GP), TOI = sum(TOI), CF = sum(CF), CA = sum(CA), FF = sum(FF), FA = sum(FA), SF = sum(SF), SA = sum(SA), GF = sum(GF), GA = sum(GA),

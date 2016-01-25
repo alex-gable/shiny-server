@@ -13,7 +13,7 @@ library(DT)
 
 # Load data
 load("teamload.Rda") # Remote
-# load("~/Documents/github/apps/corsicateam/teamtest.Rda") # Local
+# load("~/Documents/github/shiny-server/corsicateam/teamload.Rda") # Local
 
 data <- sumteam
 

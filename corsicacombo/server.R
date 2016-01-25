@@ -13,7 +13,7 @@ library(DT)
 
 # Load data
 load("lineload.Rda") # Remote
-# load("~/Documents/github/apps/corsicacombo/linetest.Rda") # Local
+# load("~/Documents/github/shiny-server/corsicacombo/lineload.Rda") # Local
 
 predata <- sumline
 
@@ -23,7 +23,7 @@ shinyServer(function(input, output, session) {
   pairdata <- reactive({
     
       load("pairload.Rda") # Remote
-      # load("~/Documents/github/apps/corsicacombo/pairtest.Rda") # Local
+      # load("~/Documents/github/shiny-server/corsicacombo/pairload.Rda") # Local
       
       sumpair
       
