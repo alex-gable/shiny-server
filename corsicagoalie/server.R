@@ -13,7 +13,7 @@ library(DT)
 
 # Load data
 load("goalieload.Rda") # Remote
-# load("~/Documents/github/shiny-server/corsicagoalie/goalieload.Rda") # Local
+#load("~/Documents/github/shiny-server/corsicagoalie/goalieload.Rda") # Local
 
 data <- sumgoalie
 
@@ -276,8 +276,9 @@ shinyServer(function(input, output) {
                  "randomnumbers.csv",
                  "larry.jpeg.csv",
                  "A.MacDonald_ContractInfo.csv",
-                 "SAP_Series_Predictions.csv"
-    )[sample(1:8, 1)],
+                 "SAP_Series_Predictions.csv",
+                 "guy_serota_tweets.csv"
+    )[sample(1:9, 1)],
     content = function(file) {
       write.csv(table.contents(), file)
     }
