@@ -1,7 +1,7 @@
 # User Interface
 
 # Corsica Combo App
-# Last edited 1-22-2016
+# Last edited 1-26-2016
 # Manny
 
 shinyUI(navbarPage("Combos", id = "tab", inverse = F, windowTitle = "Corsica | Combos",
@@ -20,7 +20,7 @@ shinyUI(navbarPage("Combos", id = "tab", inverse = F, windowTitle = "Corsica | C
                             # Header text
                             fluidRow(
                               column(6, h2("Line Stats")),
-                              column(6, h2("Corsica", class = "rightAlign"))
+                              column(6, tags$div(class = "rightAlign", checked = NA, tags$a(href = "http://www.corsica.hockey/", tags$h2("Corsica", style = "color: #2B547E;"))))
                             ),
                             
                             # Help text

@@ -1,7 +1,7 @@
 # User Interface
 
 # Corsica Player App
-# Last edited 1-22-2016
+# Last edited 1-26-2016
 # Manny
 
 shinyUI(navbarPage("Skaters", id = "tab", inverse = F, windowTitle = "Corsica | Skaters",
@@ -21,7 +21,7 @@ shinyUI(navbarPage("Skaters", id = "tab", inverse = F, windowTitle = "Corsica | 
                       # Header text
                       fluidRow(
                         column(6, h2("Skater Stats")),
-                        column(6, h2("Corsica", class = "rightAlign"))
+                        column(6, tags$div(class = "rightAlign", checked = NA, tags$a(href = "http://www.corsica.hockey/", tags$h2("Corsica", style = "color: #2B547E;"))))
                       ),
                       
                       # Help text
