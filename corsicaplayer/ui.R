@@ -21,7 +21,7 @@ shinyUI(navbarPage("Skaters", id = "tab", inverse = F, windowTitle = "Corsica | 
                       # Header text
                       fluidRow(
                         column(6, h2("Skater Stats")),
-                        column(6, tags$div(class = "rightAlign", checked = NA, tags$a(href = "http://www.corsica.hockey/", target = "_parent", tags$h2("Corsica", style = "color: #2B547E;"))))
+                        column(6, tags$div(class = "rightAlign", checked = NA, tags$a(href = "http://www.corsica.hockey/", target = "_parent", tags$h2("Corsica ↩", style = "color: #2B547E;"))))
                       ),
                       
                       # Help text
