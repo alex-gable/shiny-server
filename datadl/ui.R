@@ -7,7 +7,9 @@
 shinyUI(fluidPage(
   
   tags$head(tags$style(".container-fluid {font-size: 13px; color: #2B547E; background-color: #E8E8E8;}")),
-  tags$style(type = "text/css", ".shiny-output-error {visibility: hidden;}", ".shiny-output-error:before { visibility: hidden;}"),
+  tags$style(type = "text/css", ".shiny-output-error {visibility: hidden;}", 
+                    ".shiny-output-error:before { visibility: hidden;}",
+                    ".shiny-input-container { width: 100%; text-align: center; margin: 0 auto; }"),
   
   fluidRow(
     column(4),
@@ -15,7 +17,7 @@ shinyUI(fluidPage(
                                                                      "Play-By-Play: 2015-2016 (RData)" = "http://159.203.24.113:3838/data/pbp20152016.Rda",
                                                                      "Play-By-Play: 2008-2009 (RData)" = "http://159.203.24.113:3838/data/pbp20082009.Rda",
                                                                      "Play-By-Play: 2007-2008 (RData)" = "http://159.203.24.113:3838/data/pbp20072008.Rda",
-                                                                     "Roster" = "http://159.203.24.113:3838/data/roster.Rda"),
+                                                                     "Roster (RData)" = "http://159.203.24.113:3838/data/roster.Rda"),
                              selected = "")),
     column(4)
   ),
