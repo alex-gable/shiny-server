@@ -35,7 +35,7 @@ shinyUI(fluidPage(
   ),
   
   fluidRow(
-    tags$div(class = "separator", style = "width: 100%; height: 100px;")
+    tags$div(class = "separator", style = "width: 100%; height: 500px;")
   )
   
 ))
