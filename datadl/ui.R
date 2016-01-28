@@ -1,7 +1,7 @@
 # User Interface
 
 # Data Downloader App
-# Last edited 1-27-2016
+# Last edited 1-28-2016
 # Manny
 
 shinyUI(fluidPage(
