@@ -35,8 +35,8 @@ shinyUI(navbarPage("Teams", id = "tab", inverse = F, windowTitle = "Corsica | Te
                               column(2, uiOutput("s1")),
                               column(2, selectInput("strength", "Strength State", choices = c("All", "5v5", "5v4", "4v5", "4v4", "5v3", "3v5", "3v3", "4v3", "3v4"), selected = "5v5")),
                               column(2, selectInput("venue", "Venue", choices = c("Any", "Home", "Away"), selected = "Any")),
-                              column(2, selectInput("type", "Season Type", choices = c("Regular", "Playoffs", "Both"), selected = "Regular")),
-                              column(3, selectInput("adjust", "Adjustment", choices = c("None", "Score and Venue", "Score, Zone and Venue"), selected = "None"))
+                              column(3, selectInput("adjust", "Adjustment", choices = c("None", "Score and Venue", "Score, Zone and Venue"), selected = "None")),
+                              column(2, selectInput("type", "Season Type", choices = c("Regular", "Playoffs", "Both"), selected = "Regular"))
                             ),
                             
                             fluidRow(
