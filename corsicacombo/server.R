@@ -824,7 +824,7 @@ shinyServer(function(input, output, session) {
   )
   
   # Pairs
-  output$ldl <- downloadHandler(
+  output$pdl <- downloadHandler(
     filename = c("stats_for_nerds.csv", 
                  "MadeUpJunk.csv", 
                  "VSM_Rankings.csv",
